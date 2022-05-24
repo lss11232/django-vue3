@@ -1,6 +1,6 @@
 # django-vue3
 
-***前端***
+## 前端
 
 ```
 npm install --registry=https://registry.npm.taobao.org
