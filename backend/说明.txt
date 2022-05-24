@@ -1,0 +1,5 @@
+新增 接口需要在下面表中新增内容
+dvadmin_system_role_menu、dvadmin_system_menu
+dvadmin_system_menu_button、dvadmin_system_role_permission
+
+如果用超级管理员(superadmin)    dvadmin_system_menu_button、dvadmin_system_role_permission 可以不用新增
