@@ -3,7 +3,7 @@
     <el-row :gutter="20" class="header">
       <el-col :span="4">
         <el-autocomplete
-          :fetch-suggestions="querySearchAsync"
+          :fetch-suggestions="queryItem"
           :placeholder="$t('table.placeholder')"
           clearable
           v-model="queryFrom.platform_name"
@@ -116,61 +116,27 @@ const total = ref(0)
 const dialogVisible = ref(false)
 const dialogTitle = ref('')
 const links = ref([])
-// *****
-// const querySearchAsync = (queryString, cb) => {
-//   // 远程搜索
-//   getPlatform(field).then(res => cb(res))
-//   console.log(cb)
-// }
-//
-// let timeout
-// const querySearchAsync = (queryString, cb) => {
-//   const results = queryString ? links.value.filter(createFilter(queryString)) : links.value
-//
-//   clearTimeout(timeout)
-//   timeout = setTimeout(() => {
-//     cb(results)
-//   }, 3000 * Math.random())
-// }
-//
-// const createFilter = (queryString) => {
-//   return (restaurant) => {
-//     return (
-//       restaurant.value.toLowerCase().indexOf(queryString.toLowerCase())
-//     )
-//   }
-// }
+const items = ref([])
+// ***** 远程搜索
+    let itemList = []
+  onMounted(async() => {
+    links.value = await getPlatform(field.value)
+    itemList = links.value.data
+    items.value = itemList
+  })
 
-let timeout
-const querySearchAsync = (queryString, cb) => {
-  console.log(queryString, 'queryString')
-  const results = queryString
-    ? links.value.filter(createFilter(queryString))
-    : links.value
-  console.log(results, 'results')
-  clearTimeout(timeout)
-  timeout = setTimeout(() => {
-    cb(results)
-  }, 3000 * Math.random())
-}
-const createFilter = (queryString) => {
-  return (restaurant) => {
-    restaurant.value = queryFrom.value.platform_name
-    return (
-      restaurant.value.toLowerCase().indexOf(queryString.toLowerCase()) === 0
-    )
-  }
-}
-
-const handleSelect = (item) => {
-  console.log(item)
-}
-
-onMounted(async() => {
-  links.value = await getPlatform(field.value)
-  links.value = links.value.data
-  // console.log(links.value.data, 1111111111111111111111, field)
-})
+    /** 需求条目模糊查询逻辑 */
+    const queryItem = (queryString, cb) => {
+      const results = queryString ? items.value.filter(createFilter(queryString)) : items.value
+      cb(results)
+    }
+    const createFilter = (queryString) => {
+      return (item) => {
+        return (
+          item.platform_name.toLowerCase().indexOf(queryString.toLowerCase()) === 0
+        )
+      }
+    }
 // ******
 
 const initGetPlatformList = async (page) => {
@@ -246,13 +212,6 @@ const delPlatform = (row) => {
         message: 'Delete canceled'
       })
     })
-
-//   const handleSelect = (item) => {
-//   console.log(item)
-// }
-//   onMounted(() => {
-//     links.value = getPlatform(field)
-//   })
 }
 </script>
 
