@@ -17,4 +17,5 @@ def add_jenkins_job(sender, instance=None, created=False, **kwargs):
     # 只有 PlatformModel表创建的时候执行
     if created:
         print(instance)
+        # 在这里可以调用jenkins api; 实现当 表数据新增的时候，新增 Jenkins 的job。
 # post_save.connect(add_jenkins_job, sender=PlatformModel)
