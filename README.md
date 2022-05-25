@@ -28,8 +28,8 @@ python3 manage.py runserver 0.0.0.0:8888
 
 
 
-![view1](E:\django-vue3\django-vue3\readme-pic\view1.jpg)
+![view1](https://gitee.com/BreezeGently/django-vue3/raw/master/readme-pic/view1.jpg)
 
 
 
-![view](E:\django-vue3\django-vue3\readme-pic\view.jpg)
+![view](https://gitee.com/BreezeGently/django-vue3/raw/master/readme-pic/view.jpg)
