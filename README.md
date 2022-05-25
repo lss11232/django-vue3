@@ -23,9 +23,11 @@ python3 manage.py runserver 0.0.0.0:8888
 ```
 
 账号：superadmin
+
 密码：admin123456
 
 账号：admin
+
 密码：admin123456
 
 ## 演示图
