@@ -18,7 +18,7 @@ npm run build
 
 ```
 pip3 install -r requirements.txt
-python3 manage.py runserver 0.0.0.0:8888
+python manage.py runserver 0.0.0.0:8888
 
 ```
 
