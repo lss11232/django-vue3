@@ -23,4 +23,3 @@ python3 manage.py runserver 0.0.0.0:8888
 ```
 
 ## 演示图
-![输入图片说明](image.png)
