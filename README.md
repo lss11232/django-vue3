@@ -24,7 +24,7 @@ python3 manage.py runserver 0.0.0.0:8888
 
 ## 演示图
 
-![login](https://gitee.com/BreezeGently/django-vue3/blob/master/readme-pic/login.png)
+![login](https://gitee.com/BreezeGently/django-vue3/raw/master/readme-pic/login.png)
 
 
 
