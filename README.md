@@ -23,3 +23,13 @@ python3 manage.py runserver 0.0.0.0:8888
 ```
 
 ## 演示图
+
+![login](E:\django-vue3\django-vue3\readme-pic\login.png)
+
+
+
+![view1](E:\django-vue3\django-vue3\readme-pic\view1.jpg)
+
+
+
+![view](E:\django-vue3\django-vue3\readme-pic\view.jpg)
