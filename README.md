@@ -43,3 +43,6 @@ python manage.py runserver 0.0.0.0:8888
 
 ![view](https://gitee.com/BreezeGently/django-vue3/raw/master/readme-pic/view.jpg)
 ![添加平台页面展示](readme-pic/add.png)
+
+## swagger
+![输入图片说明](readme-pic/swagger.png)
